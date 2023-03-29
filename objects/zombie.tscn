@@ -1,0 +1,42 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://audio/zombie_sounds/zombie5.wav" type="AudioStream" id=1]
+[ext_resource path="res://audio/zombie_sounds/zombie1.wav" type="AudioStream" id=2]
+[ext_resource path="res://audio/zombie_sounds/zombie2.wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/zombie_sounds/zombie3.wav" type="AudioStream" id=4]
+[ext_resource path="res://audio/zombie_sounds/zombie4.wav" type="AudioStream" id=5]
+[ext_resource path="" type="PackedScene" id=6]
+[ext_resource path="res://animations/entity_animations.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://scripts/entity.gd" type="Script" id=8]
+[ext_resource path="res://scripts/zombie.gd" type="Script" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 21.6449
+
+[sub_resource type="PackedScene" id=2]
+_bundled = {
+"conn_count": 0,
+"conns": PoolIntArray(  ),
+"editable_instances": [  ],
+"names": PoolStringArray( "entity", "Node2D", "script", "AnimatedSprite", "AnimatedSprite", "frames", "animation", "frame", "playing", "Area2D", "Area2D", "CollisionShape2D", "CollisionShape2D", "shape", "Timer", "Timer", "one_shot" ),
+"node_count": 5,
+"node_paths": [ NodePath("."), NodePath("."), NodePath("./Area2D"), NodePath(".") ],
+"nodes": PoolIntArray( -1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 4, 5, 1, 6, 2, 7, 3, 8, 4, 0, 1073741825, 0, 10, 9, -1, 0, 0, 1073741826, 0, 12, 11, -1, 1, 13, 5, 0, 1073741827, 0, 15, 14, -1, 1, 16, 6, 0 ),
+"variants": [ ExtResource( 8 ), ExtResource( 7 ), "zombie1_walk", 1, true, SubResource( 1 ), true ],
+"version": 2
+}
+
+[node name="zombie" groups=["zombie"] instance=ExtResource( 6 )]
+z_index = 2
+script = ExtResource( 9 )
+sounds = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ]
+
+[node name="AnimatedSprite" parent="." index="0"]
+animation = "zombie3_walk"
+frame = 0
+
+[node name="moan_timer" type="Timer" parent="." index="3"]
+
+[node name="moan_sound" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource( 2 )
+volume_db = -22.341

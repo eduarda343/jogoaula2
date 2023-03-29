@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lana Del Rey - Serial Killer (Official Audio) (online-audio-converter.com).ogg-ce03914e2c57ae855715c09675fcd9e8.oggstr"
+
+[deps]
+
+source_file="res://audio/Lana Del Rey - Serial Killer (Official Audio) (online-audio-converter.com).ogg"
+dest_files=[ "res://.import/Lana Del Rey - Serial Killer (Official Audio) (online-audio-converter.com).ogg-ce03914e2c57ae855715c09675fcd9e8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
